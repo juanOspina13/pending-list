@@ -1,0 +1,125 @@
+{
+    "name": "Juan Pexip",
+    "startTime": "2019-01-23T11:24:35-0800",
+    "id": 46462,
+    "endTime": "2019-01-23T12:24:05-0800",
+    "conferences": [
+        {
+            "hearings": [],
+            "rooms": [],
+            "id": -1,
+            "title": "Upcoming Hearings"
+        },
+        {
+            "mode": "Secondary",
+            "hearings": [
+                {
+                    "conferenceId": 262337,
+                    "description": "Me, Save",
+                    "startTime": "2018-11-26T11:34:44-0800",
+                    "id": 28,
+                    "slot": 1,
+                    "endTime": "2018-11-21T07:24:09-0800",
+                    "hearingTypeId": 1,
+                    "status": "Validated",
+                    "participants": [
+                        {
+                            "dialingDirection": "Room Dial Out",
+                            "videoSuitable": "Video",
+                            "participantType": "None",
+                            "partyName": "anant1",
+                            "fullName": "anant1"
+                        },
+                        {
+                            "dialingDirection": "Room Standby",
+                            "participantType": "Detainee",
+                            "fullName": "Me, Save",
+                            "dateOfBirth": "16\/07\/1975",
+                            "connectedId": 1,
+                            "roomName": "Pexip desktop 2 - Pexip desktop 2",
+                            "roomId": 13441,
+                            "room": {
+                                "displayName": "N\/A",
+                                "isCourtroom": false,
+                                "connectedId": 1,
+                                "roomId": 13441,
+                                "connected": false,
+                                "conferenceId": 262337,
+                                "isLocked": false,
+                                "partyName": "Pexip desktop 2",
+                                "name": "Pexip desktop 2",
+                                "connectionInfo": "N\/A",
+                                "muted": false,
+                                "direction": "dial_out",
+                                "status": "N\/A"
+                            },
+                            "conferenceId": 262337,
+                            "ready": 0,
+                            "videoSuitable": "Video",
+                            "createdTime": "26\/07\/2018 01:53 PM",
+                            "id": 43
+                        },
+                        {
+                            "dialingDirection": "Room Dial Out",
+                            "conferenceId": 262337,
+                            "videoSuitable": "Video",
+                            "participantType": "None",
+                            "fullName": "admin",
+                            "connectedId": 3,
+                            "roomName": "admin:Customer Vidyo - admin",
+                            "roomId": 13418,
+                            "room": {
+                                "displayName": "N\/A",
+                                "isCourtroom": false,
+                                "connectedId": 3,
+                                "roomId": 13418,
+                                "connected": false,
+                                "conferenceId": 262337,
+                                "isLocked": false,
+                                "partyName": "admin",
+                                "name": "admin",
+                                "connectionInfo": "N\/A",
+                                "muted": false,
+                                "direction": "dial_out",
+                                "status": "N\/A"
+                            }
+                        },
+                        {
+                            "dialingDirection": "Room Dial Out",
+                            "conferenceId": 262337,
+                            "ready": 0,
+                            "videoSuitable": "Video",
+                            "participantType": "Solicitor",
+                            "fullName": "FASDFAS, rqwerq",
+                            "id": 29,
+                            "connectedId": 2,
+                            "roomName": "Pexip laptop - Pexip laptop",
+                            "roomId": 9226,
+                            "room": {
+                                "displayName": "N\/A",
+                                "isCourtroom": false,
+                                "connectedId": 2,
+                                "roomId": 9226,
+                                "connected": false,
+                                "conferenceId": 262337,
+                                "isLocked": false,
+                                "partyName": "Pexip laptop",
+                                "name": "Pexip laptop",
+                                "connectionInfo": "N\/A",
+                                "muted": false,
+                                "direction": "dial_in",
+                                "status": "N\/A"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "rooms": [],
+            "dialInNumericId": "1646599",
+            "isLocked": false,
+            "id": 262337,
+            "title": "Juan Pexip: Lobby",
+            "status": "In Error"
+        }
+    ]
+}

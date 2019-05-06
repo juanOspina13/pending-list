@@ -1,0 +1,190 @@
+<div class="row pt-4">
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <div class="row form-group">
+          <div class="col-xl-8">
+            <div class="container" style="
+            
+              background-color: #fff;
+              background-clip: border-box;
+              ">
+              <div class="row">
+                <div class="col-4">
+                  <h3>My Hearings</h3>
+                </div>
+
+
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <small>Currently Showing: Unallocated Hearings</small>
+                </div>
+                <div class="col-6" align="right">
+                  <span><i class="fa fa-print" aria-hidden="true"></i> Print List</span>
+                </div>
+              </div>
+
+              <div class="row">
+
+                <div class="offset-4 col-2">
+                  <span *ngIf="loading">
+                    <b><small style="font-style: italic;color:#90989d;"> <i class="fa fa fa-spinner fa-spin"></i>
+                        Loading</small></b>
+                  </span>
+                </div>
+                <div class="col-6">
+                  <input class="form-control form-control-sm input-sm ml-2" type="text" [formControl]="searchFilter"
+                    placeholder="Search &#xf002;" style="font-family:Arial, FontAwesome" />
+
+                </div>
+
+              </div>
+              <!--Start Table View-->
+              <!--div class="card-header" style="background-color:#dfe1e6!important">
+                <div class="row">
+                  <div class="col-11">
+                    <span><b>Pending List Hearings</b></span>
+                  </div>
+                  <div class="col-1" align="right">
+                    <div class="dropdown ml-1 mr-1">
+                      <a class="btn btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" data-placement="top" title="Extra Actions..."><i
+                          class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item cursor-hand"><i class="fa fa-print"></i> Print List</a>
+                      </div>
+                    </div>
+                  </div>
+        
+                </div>
+              </div-->
+
+
+              <div class="row form-group">
+                <div class="col-2">
+
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col" align="center">
+                  <ng-template #noDataView>
+                    <b>
+                      <span><i class="fa fa-warning" aria-hidden="true"></i> No Hearings currently Available</span>
+                    </b>
+                  </ng-template>
+                  <div *ngIf="(pendingHearings$| async)?.length > 0; else noDataView">
+
+                    <table class=" table table-borderless table-sm">
+                      <thead>
+                        <tr>
+                          <th style="font-weight:bold" scope="col">ID</th>
+                          <th style="font-weight:bold" scope="col" sortable="description" (sort)="onSort($event)">
+                            Hearing
+                          </th>
+                          <th style="font-weight:bold" scope="col" sortable="courtRoomName" (sort)="onSort($event)">
+                            Court
+                            Room</th>
+                          <th style="font-weight:bold" scope="col" sortable="description" (sort)="onSort($event)">
+                            Appearing
+                            From</th>
+                          <th style="font-weight:bold" scope="col" sortable="description" (sort)="onSort($event)">Flags
+                          </th>
+                          <th style="font-weight:bold" scope="col" sortable="status" (sort)="onSort($event)">Status</th>
+                          <th style="font-weight:bold" scope="col" sortable="priority" (sort)="onSort($event)">Priority
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <ng-container *ngFor="let pendingHearing of pendingHearings$| async ; index as i">
+                          <tr>
+                            <th scope="row">{{ pendingHearing.reservationId }}</th>
+                            <td>
+                              <a role="button" class="align-middle cursor-hand"
+                                (click)="toggleCollapsed(pendingHearing)">
+                                <i *ngIf="pendingHearing.additionalInformation.collapsed" class="fa fa-plus-square"></i>
+                                <i *ngIf="!pendingHearing.additionalInformation.collapsed"
+                                  class="fa fa-minus-square"></i>
+                                {{ pendingHearing.description }}
+                              </a>
+                            </td>
+                            <td>
+                              {{ pendingHearing.courtRoomName }}
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                              <i class="fa fa-users"></i>
+                            </td>
+                            <td>
+                              {{ pendingHearing.status }}
+                            </td>
+                            <td>
+                              {{ pendingHearing.priority }}
+                            </td>
+
+                          </tr>
+                          <tr *ngIf="!pendingHearing.additionalInformation.collapsed">
+                            <td></td>
+                            <td colspan="6">
+                              <div>
+                                <p style="font-size: 14px;font-style: italic;font-weight: bold;">Additional Information
+                                </p>
+
+                                ...
+                              </div>
+                            </td>
+                          </tr>
+                        </ng-container>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4">
+            <h3>Court Sessions</h3>
+            <div class="row form-group">
+              <div class="col-6">
+                <label for="sessionNextDays" class="col-form-label">Sessions in the next</label>
+                <select class="form-control form-control-sm" id="sessionNextDays">
+                  <option>30 Days</option>
+                </select>
+
+              </div>
+              <div class="col-6">
+                  <label for="sessionType" class="col-form-label">Sessions Type</label>
+                  <select class="form-control form-control-sm" id="sessionType">
+                    <option>First Appearance</option>
+                  </select>
+                
+                </div>
+            </div>
+
+            <div class="card">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Medway Magistrates Court 1</li>
+                <li class="list-group-item">Medway Magistrates Court 2</li>
+                <li class="list-group-item">Medway Magistrates Court 3</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--div class="row no-gutters">
+        <div class="col">
+          <a class="btn btn-outline-secondary" [swal]="{ 
+                title: 'Title', 
+                text: 'Content',         
+                type: 'question', 
+                showCancelButton: true }" (confirm)="executeAction($event)">
+            <i class="fa fa-times"></i>Action w/ validation</a>
+        </div>
+      </div-->
+      <!--Start Table View-->
+    </div>
+  </div>
+</div>
