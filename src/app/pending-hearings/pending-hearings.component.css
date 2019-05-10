@@ -1,4 +1,16 @@
+.container.pending-container{
+  background-color: #fff;
+  background-clip: border-box;
+}
 
+small.loading-message{
+  font-style: italic;
+  color:#90989d;
+}
+
+.font-awesome-text{
+  font-family:Arial, FontAwesome;
+}
 /* Sortable table demo */
 
 th[sortable] {

@@ -9,7 +9,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class AppComponent {
 
   constructor(
-    private spinner: NgxSpinnerService,
+    protected spinner: NgxSpinnerService
   ) {
   }
 

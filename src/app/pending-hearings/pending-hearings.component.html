@@ -1,0 +1,97 @@
+<div class="row pt-4">
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <div class="row form-group">
+          <div class="col-xl-8">
+            <div class="container pending-container">
+              <div class="row">
+                <div class="col-4">
+                  <h3>My Hearings</h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <small>Currently Showing: Unallocated Hearings</small>
+                </div>
+                <div class="col-6" align="right" *ngIf="pendingHearings?.length>0">
+                  <span><i class="fa fa-print" aria-hidden="true"></i> Print List</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="offset-4 col-2">
+                  <span *ngIf="loading">
+                    <b><small class="loading-message"> <i class="fa fa fa-spinner fa-spin"></i>
+                        Loading</small></b>
+                  </span>
+                </div>
+                <div class="col-6" *ngIf="pendingHearings?.length>0">
+                  <input class="form-control form-control-sm input-sm ml-2 font-awesome-text" type="text"
+                    [formControl]="searchFilter" placeholder="Search &#xf002;" />
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-2">
+
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col" align="center">
+                  <ng-template #noDataView>
+                    <b>
+                      <span><i class="fa fa-warning" aria-hidden="true"></i> No Hearings currently Available</span>
+                    </b>
+                  </ng-template>
+                  <div *ngIf="pendingHearings?.length > 0; else noDataView">
+
+                    <table class=" table table-borderless table-sm">
+                      <thead>
+                        <tr>
+                          <th scope="col"><b>ID</b></th>
+                          <th scope="col" sortable="description" (sort)="onSort($event)">
+                            <b>Hearing</b>
+                          </th>
+                          <th scope="col" sortable="courtRoomName" (sort)="onSort($event)">
+                            <b>Court Room</b></th>
+                          <th scope="col" sortable="description" (sort)="onSort($event)">
+                            <b>Appearing From</b>
+                          </th>
+                          <th scope="col" sortable="description" (sort)="onSort($event)">
+                            <b>Flags</b>
+                          </th>
+                          <th scope="col" sortable="status" (sort)="onSort($event)"><b>Status</b></th>
+                          <th scope="col" sortable="priority" (sort)="onSort($event)"><b>Priority</b>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <ng-container *ngFor="let pendingHearing of pendingHearings ; index as i">
+                          <tr hearing-main-information (toggleCollapsed)="toggleCollapsed($event)"
+                            [pendingHearing]="pendingHearing"></tr>
+                          <tr hearing-additional-information
+                            [pendingHearingDetails]="pendingHearing.hearingObjectDetails"
+                            *ngIf="!pendingHearing.collapsed"></tr>
+                        </ng-container>
+                      </tbody>
+                    </table>
+                    <div class="justify-content-between p-2">
+                      <div class="pull-right">
+                        <!--ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
+                          size="sm" (pageChange)="onPageChanged($event)">
+                        </ngb-pagination-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4">
+            <app-upcoming-sessions></app-upcoming-sessions>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<th scope="row">{{ pendingHearing.hearingObject.id }}</th>
+<td>
+  <a role="button" class="align-middle cursor-hand" (click)="toggleCollapsed()">
+    <i *ngIf="loading;else toggleCollapsedContainer" class="fa fa fa-spinner fa-spin"></i>
+    <ng-template #toggleCollapsedContainer>
+      <i *ngIf="pendingHearing.collapsed" class="fa fa-plus-square"></i>
+      <i *ngIf="!pendingHearing.collapsed" class="fa fa-minus-square"></i>
+    </ng-template>
+    <span> {{ pendingHearing.hearingObject.description }}</span>
+  </a>
+</td>
+<td>
+  {{ pendingHearing.hearingObject.courtRoomName }}
+</td>
+<td>
+</td>
+<td>
+  <i class="fa fa-users"></i>
+</td>
+<td>
+  {{ pendingHearing.hearingObject.status }}
+</td>
+<td>
+  {{ pendingHearing.hearingObject.priority }}
+</td>

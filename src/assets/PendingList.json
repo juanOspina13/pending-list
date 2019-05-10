@@ -1,39 +1,3 @@
-/*********************************************************************
-    Author:             Daniel Kroells
-    Description:        Returns list of matching pending hearings
-    Type:               POST
-    Request Payload :
-    {
-        "action": "searchHearings",
-        "sort": "id,asc",
-        "search": string used for search,
-        "type": future use - may be ignored for now
-    }
-    Response Payload:
-    {
-        "hearings": [
-            {
-                "reservationId": int,
-                "description": String-Hearing title as it appears on the Hearing pages,
-                "courtRoomName": String-name of court room,
-                "detaineeRoomName": String-name of room detainee is appearing from,
-                "handcuffs": Boolean-flag,
-                "supervision": Boolean-flag,
-                "youth": Boolean-flag,
-                "needsInterpreter": Boolean-flag,
-                "breachOfBailDVPO": Boolean-flag,
-                "countDownTime": int-seconds for countdown; only use if breachOfBailDVPO is true,
-                "statusId":	int-status value,
-                "status": String-status for display,
-                "priority": int
-            },
-
-        ]
-    }
-    
-
-    reachOfBailDVPO?
-********************************************************************/
 {
     "hearings": [
         {

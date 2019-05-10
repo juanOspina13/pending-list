@@ -1,0 +1,48 @@
+<div>
+  <h3>Court Sessions</h3>
+  <div class="row form-group">
+    <div class="col-6">
+      <label for="sessionNextDays" class="col-form-label">Sessions in the next</label>
+      <select [formControl]="sessionDaysFilter" class="form-control form-control-sm" id="sessionNextDays">
+        <option [value]="sessionDay" *ngFor="let sessionDay of sessionDays"> {{sessionDay.description}}</option>
+      </select>
+
+    </div>
+    <div class="col-6">
+      <label for="sessionType" class="col-form-label">Sessions Type</label>
+      <select [formControl]="sessionTypeFilter" class="form-control form-control-sm" id="sessionType">
+        <option [value]="sessionType" *ngFor="let sessionType of sessionTypes"> {{sessionType.description}}</option>
+      </select>
+
+    </div>
+  </div>
+  <ng-container *ngIf="(sessions$| async)?.length>0;else noSessionsView">
+    <div class="row" *ngFor="let session of sessions$| async;last as isLast">
+      <div class="col">
+        <app-session [session]="session"></app-session>
+        <div *ngFor="let hearing of session.hearings" class="alert alert-secondary pt-1 pb-1 align-text-to-center"
+          role="alert">
+          {{hearing.description}}</div>
+        <hr *ngIf="!isLast" />
+      </div>
+    </div>
+  </ng-container>
+  <div class="justify-content-between p-2">
+    <div class="pull-right">
+      <!--ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
+        size="sm" (pageChange)="onPageChanged($event)">
+      </ngb-pagination-->
+    </div>
+  </div>
+  <div class="mt-1 row no-gutters" *ngIf="loading">
+    <b><small class="loading-message"> <i class="fa fa fa-spinner fa-spin"></i>
+        Loading</small></b>
+  </div>
+</div>
+<ng-template #noSessionsView>
+  <div class="align-text-to-center">
+    <b>
+      <span><i class="fa fa-warning" aria-hidden="true"></i> No Sessions currently Available</span>
+    </b>
+  </div>
+</ng-template>

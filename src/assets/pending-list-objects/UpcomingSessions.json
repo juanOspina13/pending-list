@@ -1,0 +1,51 @@
+{
+    "totalCount": 3,
+    "sessions": [
+        {
+            "id": 1,
+            "sessionName": "Magistrates Court",
+            "startTime": "19/05/2019",
+            "endTime": "19/05/2019",
+            "hearings": [
+                {
+                    "reservationId": 1,
+                    "description": "Juans Trial",
+                    "courtRoomName": "GTL Court Room",
+                    "detaineeRoomName": "Juan",
+                    "handcuffs": true,
+                    "supervision": true,
+                    "youth": true,
+                    "needsInterpreter": true,
+                    "breachOfBailDVPO": true,
+                    "countDownTime": 10,
+                    "statusId": 1,
+                    "status": "Ready",
+                    "priority": 1
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "sessionName": "GTL Court",
+            "startTime": "19/05/2019",
+            "endTime": "19/05/2019",
+            "hearings": [
+                {
+                    "reservationId": 1,
+                    "description": "Juans Trial",
+                    "courtRoomName": "GTL Court Room",
+                    "detaineeRoomName": "Juan",
+                    "handcuffs": true,
+                    "supervision": true,
+                    "youth": true,
+                    "needsInterpreter": true,
+                    "breachOfBailDVPO": true,
+                    "countDownTime": 10,
+                    "statusId": 1,
+                    "status": "Ready",
+                    "priority": 1
+                }
+            ]
+        }
+    ]
+}

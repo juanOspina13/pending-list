@@ -1,0 +1,12 @@
+{
+    "hearingParticipants": [
+        {
+            "id": "1",
+            "name": "Juan Hearing",
+            "roomName": "Pexip Desktop 2",
+            "statusId": 1,
+            "status": "Ready"
+        }
+    ],
+    "additionalInformation": "Pexip Desktop 2 is enabled because"
+}

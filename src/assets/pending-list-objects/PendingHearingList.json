@@ -1,0 +1,36 @@
+{
+    "hearings": [
+        {
+            "id": 14,
+            "reservationId": 1,
+            "description": "Juans Trial 1",
+            "courtRoomName": "GTL Court Room",
+            "detaineeRoomName": "Juan",
+            "handcuffs": true,
+            "supervision": true,
+            "youth": true,
+            "needsInterpreter": true,
+            "breachOfBailDVPO": true,
+            "countDownTime": 10,
+            "statusId": 1,
+            "status": "Ready",
+            "priority": 1
+        },
+        {
+            "id": 15,
+            "reservationId": 1,
+            "description": "Juans Trial 2",
+            "courtRoomName": "De LaRiva Court Room",
+            "detaineeRoomName": "Daniel",
+            "handcuffs": true,
+            "supervision": true,
+            "youth": true,
+            "needsInterpreter": true,
+            "breachOfBailDVPO": true,
+            "countDownTime": 10,
+            "statusId": 1,
+            "status": "Ready",
+            "priority": 1
+        }
+    ]
+}
