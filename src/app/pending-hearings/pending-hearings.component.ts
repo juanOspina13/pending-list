@@ -35,6 +35,8 @@ export class PendingHearingComponent implements AfterViewInit {
 
   loading = false;
 
+  dragging = false;
+
   /*
   Paging Parameters
   page  = 2;
@@ -88,16 +90,20 @@ export class PendingHearingComponent implements AfterViewInit {
 
   }
 
-  onPageChanged(pageIndex: number) {
-    console.log(pageIndex);
-  }
-
   searchHearings(filter: string, sortCriteria: string) {
     return this.sessionService.searchHearings(filter, sortCriteria).subscribe(pendingHearings => {
       if (pendingHearings && pendingHearings.hearings) {
         this.pendingHearings = this.formatPendingListObject(pendingHearings.hearings);
       }
     });
+  }
+
+  dragEnabled() {
+    return true;
+  }
+
+  getAllData() {
+    return {};
   }
 }
 

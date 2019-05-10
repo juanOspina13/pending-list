@@ -2,3 +2,20 @@
 .align-text-to-center{
   text-align:center;
 }
+
+.drag-target-border{
+    background-color:#54A7FF;
+    color:white;
+    border:solid #54A7FF 1px ;
+}
+
+.drag-target-hearing-border{
+    border:solid #54A7FF 1px ;
+}
+
+i.fa-arrow-down{
+  visibility: hidden;
+}
+.drag-target-hearing-border>i.fa-arrow-down{
+  visibility:visible;
+}

@@ -10,6 +10,9 @@ export class HearingMainInformationComponent implements OnInit {
   @Input() pendingHearing;
 
   loading = false;
+
+  @Input() dragging;
+
   constructor(protected sessionService: SessionService) {
   }
 
@@ -41,4 +44,16 @@ export class HearingMainInformationComponent implements OnInit {
       });
   }
 
+  dragEnabled() {
+    return true;
+  }
+
+  getAllData() {
+    return {};
+  }
+
+  performDraggingAction() {
+
+  }
 }
+

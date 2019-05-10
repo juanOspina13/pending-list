@@ -1,13 +1,28 @@
-<th scope="row">{{ pendingHearing.hearingObject.id }}</th>
-<td>
-  <a role="button" class="align-middle cursor-hand" (click)="toggleCollapsed()">
-    <i *ngIf="loading;else toggleCollapsedContainer" class="fa fa fa-spinner fa-spin"></i>
-    <ng-template #toggleCollapsedContainer>
-      <i *ngIf="pendingHearing.collapsed" class="fa fa-plus-square"></i>
-      <i *ngIf="!pendingHearing.collapsed" class="fa fa-minus-square"></i>
-    </ng-template>
-    <span> {{ pendingHearing.hearingObject.description }}</span>
-  </a>
+<td colspan="3">
+
+  <div class="row no-gutters" (onDragEnd)="dragging=false" draggable [dragEnabled]="dragEnabled()" [dragData]="getAllData()"
+    (onDragEnd)="performDraggingAction()" (onDragStart)="dragging=true">
+    <div class="col-1">
+      <i *ngIf="dragging" class="fa fa-hand-rock"></i>
+      <i *ngIf="!dragging" class="fa fa-hand-paper"></i>
+    </div>
+    <div class="col-2">
+      {{ pendingHearing.hearingObject.id }}
+    </div>
+    <div class="col-9">
+      <a role="button" class="align-middle cursor-hand" (click)="toggleCollapsed()">
+        <i *ngIf="loading;else toggleCollapsedContainer" class="fa fa fa-spinner fa-spin"></i>
+        <ng-template #toggleCollapsedContainer>
+
+          <i *ngIf="pendingHearing.collapsed" class="fa fa-plus-square"></i>
+          <i *ngIf="!pendingHearing.collapsed" class="fa fa-minus-square"></i>
+        </ng-template>
+        <span> {{ pendingHearing.hearingObject.description }}</span>
+
+      </a>
+
+    </div>
+  </div>
 </td>
 <td>
   {{ pendingHearing.hearingObject.courtRoomName }}

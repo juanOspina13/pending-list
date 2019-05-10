@@ -48,20 +48,20 @@
                     <table class=" table table-borderless table-sm">
                       <thead>
                         <tr>
-                          <th scope="col"><b>ID</b></th>
-                          <th scope="col" sortable="description" (sort)="onSort($event)">
+                          <th class="align-text-to-center" colspan="2" sortable="id" (sort)="onSort($event)"><b>ID</b></th>
+                          <th sortable="description" (sort)="onSort($event)">
                             <b>Hearing</b>
                           </th>
-                          <th scope="col" sortable="courtRoomName" (sort)="onSort($event)">
+                          <th sortable="courtRoomName" (sort)="onSort($event)">
                             <b>Court Room</b></th>
-                          <th scope="col" sortable="description" (sort)="onSort($event)">
+                          <th sortable="description" (sort)="onSort($event)">
                             <b>Appearing From</b>
                           </th>
-                          <th scope="col" sortable="description" (sort)="onSort($event)">
+                          <th sortable="description" (sort)="onSort($event)">
                             <b>Flags</b>
                           </th>
-                          <th scope="col" sortable="status" (sort)="onSort($event)"><b>Status</b></th>
-                          <th scope="col" sortable="priority" (sort)="onSort($event)"><b>Priority</b>
+                          <th sortable="status" (sort)="onSort($event)"><b>Status</b></th>
+                          <th sortable="priority" (sort)="onSort($event)"><b>Priority</b>
                           </th>
                         </tr>
                       </thead>
@@ -75,13 +75,13 @@
                         </ng-container>
                       </tbody>
                     </table>
-                    <div class="justify-content-between p-2">
+                    <!--div class="justify-content-between p-2">
                       <div class="pull-right">
-                        <!--ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
+                        <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
                           size="sm" (pageChange)="onPageChanged($event)">
-                        </ngb-pagination-->
+                        </ngb-pagination>
                       </div>
-                    </div>
+                    </div-->
                   </div>
                 </div>
               </div>

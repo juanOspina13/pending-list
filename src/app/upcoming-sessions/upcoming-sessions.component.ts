@@ -52,12 +52,13 @@ export class UpcomingSessionsComponent implements OnInit {
 
   /*
   Paging Parameters
-  page = 2;
+  page  = 2;
 
-  pageSize = 10;
+  pageSize  = 10;
 
-  collectionSize = 35;
+  collectionSize  = 35;
   */
+
   constructor(protected sessionService: SessionService) { }
 
   ngOnInit() {

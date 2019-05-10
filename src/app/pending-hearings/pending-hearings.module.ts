@@ -12,6 +12,7 @@ import { PendingHearingComponent } from './pending-hearings.component';
 import { UpcomingSessionsModule } from '../upcoming-sessions/upcoming-sessions.module';
 import { TableSortableDirective } from '../shared/table-sorting/table-sortable-directive';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgDragDropModule } from 'ng-drag-drop';
 
 @NgModule({
   imports: [
@@ -19,12 +20,13 @@ import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
     NgxSpinnerModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbPaginationModule,
     ToastrModule.forRoot({
       timeOut: 10000
     }),
     SweetAlert2Module.forRoot(),
+    NgDragDropModule.forRoot(),
     CommonModule,
+    NgbPaginationModule,
     UpcomingSessionsModule
   ],
   declarations: [
